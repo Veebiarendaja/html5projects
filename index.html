@@ -29,27 +29,24 @@
     <main>
         <section id="main">
             <article>
-                <h2>Article Headline</h2>
+                <article>
+                    <h1>Skript</h1>
 
-                <p>
-                    JetBrains PhpStorm is a commercial, cross-platform IDE for PHP[1] built on JetBrains' IntelliJ IDEA
-                    platform.
+                    <p>Terminal</p>
 
-                    PhpStorm provides an editor for PHP, HTML and JavaScript with on-the-fly code analysis, error
-                    prevention
-                    and automated refactorings for PHP and JavaScript code. PhpStorm's code completion supports PHP 5.3,
-                    5.4, 5.5 & 5.6[2] (modern and legacy projects), including generators, coroutines, the finally
-                    keyword,
-                    list in foreach, namespaces, closures, traits and short array syntax. It includes a full-fledged SQL
-                    editor with editable query results.[3][4]
-                    PhpStorm is built on IntelliJ IDEA, which is written in Java. Users can extend the IDE by installing
-                    plugins created for the IntelliJ Platform or write their own plugins.
+                    <form id="skriptForm" action="#">
+                        <label for="">Name:</label>
+                        <input type="text" id="name" placeholder="Write Name">
 
-                    All features available in WebStorm are included in PhpStorm,[5] which adds support for PHP and
-                    databases.[6] WebStorm ships with pre-installed JavaScript plugins (such as for Node.js), which are
-                    available for PhpStorm as well at no cost.[7]
-                </p>
-            </article>
+                        <label for="">Option:</label>
+                        <input type="text" id="option" placeholder="Options">
+                        <button onclick="showOption()">click</button>
+                        <button onclick="clearOption()">clear</button>
+                    </form>
+                    <div id="holder">
+
+                    </div>
+                </article>
         </section>
         <aside>
             <h3>Sidebar</h3>
