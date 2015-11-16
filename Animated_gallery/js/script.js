@@ -1,10 +1,10 @@
 $(document).ready(function(){
     var items = $('#gallery li'),
-        itemsByTags = [];
+        itemsByTags = {};
 
     //Loop
 
-    items.each(function() {
+    items.each(function(i) {
         var element = $(this),
             tags = element.data('tags').split(',');
 
@@ -30,5 +30,43 @@ $(document).ready(function(){
 
     $.each(itemsByTags, function(k, v){
         createList(k, v);
-    })
+    });
+
+    //Click handler
+    $('#navbar a').live('click', function(e){
+        var link = $(this);
+
+        //Add Class
+
+        link.addClass('active').siblings().removeClass('active');
+
+        $('#gallery').quicksand(link.data('list').find('li'));
+        e.preventDefault();
+    });
+
+    $('#navbar a:first').click();
+
+
+    //Create the list
+    function createList(text, items) {
+        //Create UL
+        var ul = $('<ul>', {'class': 'hidden'});
+
+
+        $.each(items, function () {
+            $(this).clone().appendTo(ul);
+        });
+
+        //Add gallery div
+
+        ul.appendTo('#gallery');
+
+        //Create menu item
+
+        var a = $('<a>',{
+            html:text,
+            href:'#',
+            data:{list:ul}
+        }).appendTo('#navbar');
+    }
 });
