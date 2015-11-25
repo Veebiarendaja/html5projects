@@ -33,42 +33,18 @@ $(document).ready(function(){
 });
 
 function process(n) {
-    var submitted = $('input[name=q1]:checked').val();
-
-
-    if(q == "q1") {
-        var submitted = $('input[name=q1]:checked').val();
-        if(submitted == sessionStorage.a1){
-            score++;
-        }
+    var submitted = $('input[name=q' + n + ']:checked').val();
+    if (submitted == sessionStorage.getItem('a' + n + '')) {
+        score = score + point;
     }
-    if(q == "q2") {
-        var submitted = $('input[name=q2]:checked').val();
-        if(submitted == sessionStorage.a2){
-            score++;
-        }
-    }
-    if(q == "q3") {
-        var submitted = $('input[name=q3]:checked').val();
-        if(submitted == sessionStorage.a3){
-            score++;
-        }
-    }
-    if(q == "q4") {
-        var submitted = $('input[name=q4]:checked').val();
-        if(submitted == sessionStorage.a4){
-            score++;
-        }
-    }
-    if(q == "q5") {
-        var submitted = $('input[name=q5]:checked').val();
-        if(submitted == sessionStorage.a5){
-            score++;
-        }
+    if(n == total) {
         $('#results').html('<h3>Youre final score: ' + score +' out of ' + highest + '</h3>');
+        if(score == highest) {
+            $('#results').append('<p>Highest points!</p>');
+        }
     }
-    return false;
 }
+
 
 //Add event listener
 window.addEventListener('load', init, false);
