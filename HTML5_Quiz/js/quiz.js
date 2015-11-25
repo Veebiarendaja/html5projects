@@ -37,6 +37,7 @@ function process(n) {
     if (submitted == sessionStorage.getItem('a' + n + '')) {
         score = score + point;
     }
+
     if(n == total) {
         $('#results').html('<h3>Youre final score: ' + score +' out of ' + highest + '</h3>');
         if(score == highest) {
