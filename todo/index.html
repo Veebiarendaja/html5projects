@@ -16,7 +16,7 @@
 <!--    JQuery Addon for browsers-->
     <script>
         $(function() {
-            $( "#todo_date" ).datepicker();
+            $( "#todo_date, #todo_date_edit" ).datepicker();
         });
     </script>
 </head>
@@ -71,8 +71,8 @@
     </header>
     <main data-role="content" id="content">
         <form action="" id="edit_form">
-            <input type="text" name="todo_name" id="todo_name" placeholder="Add ToDo Name">
-            <input type="date" name="todo_date" id="todo_date">
+            <input type="text" name="todo_name" id="todo_name_edit" placeholder="Add ToDo Name">
+            <input type="date" name="todo_date" id="todo_date_edit">
             <a href="#" id="delete" data-role="button">Delete</a>
         </form>
     </main>
